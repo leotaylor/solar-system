@@ -1,9 +1,11 @@
-printToDom function
+
 const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 };
 
-
+const buildDomString = planetArray => {
+    let domString = "";
+}
 
 function WTF (){
     console.log("Houston We Have A Problem!");
@@ -18,7 +20,7 @@ const startApplication = () => {
 let myRequest = new XMLHttpRequest();
 myRequest.addEventListener("load", executeFunction);
 myRequest.addEventListener("error", WTF);
-myRequest.open("GET", "planets.json");
+myRequest.open("GET", "solar.json");
 myRequest.send();
 };
 
