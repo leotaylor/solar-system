@@ -63,6 +63,14 @@
         "isGasPlanet": true,
         "numberOfMoons": 14,
         "nameOfLargestMoon": "Triton"
+      },
+      {
+        "name": "Pluto",
+        "imageUrl": "/images/pluto1.jpg",
+        "description": "",
+        "isGasPlanet": false,
+        "numberOfMoons": 5,
+        "nameOfLargestMoon": "Charon" 
       }
     ]
   }

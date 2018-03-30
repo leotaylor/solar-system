@@ -1,3 +1,22 @@
 body{
-    background-color: blanchedalmond;
+    background-image: url("https://graffitiwallpaper.com/pics/listings/337_wide.jpg");
+    background-size: contain;
+}
+#planet-holder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.planet{
+    border: 3px solid black;
+    background-color: white;
+    width: 200px;
+    height: 225px;
+    text-align: center;
+    /* position: absolute; this makes them stack*/
+    margin: 4%;
+    padding: 3%;
+}
+.planet h1{
+    line-height: 175px;
 }
