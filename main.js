@@ -3,9 +3,16 @@ const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 };
 
-const buildDomString = planetArray => {
+const buildDomString = (planetArray) => {
+    console.log("PlanetArray:",planetArray);
     let domString = "";
-}
+    for(let i=0; i<planetArray.length; i++){
+    domString += `<div class="planet">`;
+    domString +=    `<h1>${planetArray[i].name}</h1>`;
+    domString += `</div>`;
+    }
+    printToDom(domString, 'planet-holder');
+};
 
 function WTF (){
     console.log("Houston We Have A Problem!");
