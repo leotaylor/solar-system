@@ -4,11 +4,11 @@ const printToDom = (domString, divId) => {
 };
 
 const buildDomString = (planetArray) => {
-    console.log("PlanetArray:",planetArray);
     let domString = "";
     for(let i=0; i<planetArray.length; i++){
     domString += `<div class="planet">`;
     domString +=    `<h1>${planetArray[i].name}</h1>`;
+    domString +=    `<img id="planet-image" src="${planetArray[i].imageUrl}">`;
     domString += `</div>`;
     }
     printToDom(domString, 'planet-holder');
