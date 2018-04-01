@@ -73,18 +73,19 @@ function clickFunction (){
     console.log("data", data);  
     // for loop, if statement, traverseDom
     buildBigDomString(data.planets);
+    addXeventListener();
 }
 
 // --------------Clicking on X--------------------------
 
-// const addXeventListener = () =>{
-//     const XButton = document.getElementsByClassName("x-button");
-//     console.log("xbutton:", XButton);
-//     for(let n=0; n<XButton.length; n++){
-//     XButton[n].addEventListener('click', closeIt);
-//     }
-// }
+const addXeventListener = () =>{
+    const XButton = document.getElementsByClassName("x-button");
+    console.log("xbutton:", XButton);
+    for(let n=0; n<XButton.length; n++){
+    XButton[n].addEventListener('click', closeIt);
+    }
+}
 
-// const closeIt = e => {
-//     startApplication(executeFunction);
-// }
+const closeIt = e => {
+    startApplication(executeFunction);
+}
