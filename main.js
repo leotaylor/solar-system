@@ -15,12 +15,13 @@ const buildDomString = (planetArray) => {
 };
 
 function WTF (){
-    console.log("Houston We Have A Problem!");
+    console.log("Houston, We Have A Problem!");
 }
 
 function executeFunction (){
     const data = JSON.parse(this.responseText);
     buildDomString(data.planets);
+    addPlanetEventListener();
 }
 
 const startApplication = (callback) => {
@@ -41,6 +42,7 @@ const buildBigDomString = (solarArray) => {
     let domString = "";
     for(let j=0; j<solarArray.length; j++){
         domString += `<div class="bigCard">`;
+        domString +=    `<button class="x-button">&#x2718</button>`
         domString +=    `<h1>${solarArray[j].name}</h1>`;
         domString +=    `<img id="bigImage" src="${solarArray[j].imageUrl}">`;
         domString +=    `<p>${solarArray[j].description}</p>`;
@@ -49,39 +51,40 @@ const buildBigDomString = (solarArray) => {
         domString +=    `<h4>"Largest Moon: "${solarArray[j].nameOfLargestMoon}</h4>`;
         domString += `</div>`;   
     }
-    printToDom(domString, "bigCard-holder");
+    printToDom(domString, "planet-holder");
 }
 
-
 const addPlanetEventListener = () =>{
-    const planetaryObject = document.getElementById("planet-image");
+    const planetaryObject = document.getElementsByClassName("planet");
+    console.log("planetaryObject:", planetaryObject);
     for(let k=0; k<planetaryObject.length; k++){
         planetaryObject[k].addEventListener('click', clickItOrTicket);
     }
 }
 
-const clickItOrTicket = (e) => {
+const clickItOrTicket = e => {
     const newContainer = e.target.parentNode;
+    console.log("newContainer: ", newContainer);
+    startApplication(clickFunction);
 }
-
 
 function clickFunction (){
     const data = JSON.parse(this.responseText);
+    console.log("data", data);  
+    // for loop, if statement, traverseDom
     buildBigDomString(data.planets);
-    addPlanetEventListener();
 }
 
-// startApplication(clickFunction);
+// --------------Clicking on X--------------------------
 
+// const addXeventListener = () =>{
+//     const XButton = document.getElementsByClassName("x-button");
+//     console.log("xbutton:", XButton);
+//     for(let n=0; n<XButton.length; n++){
+//     XButton[n].addEventListener('click', closeIt);
+//     }
+// }
 
-
-
-// const clickApplication = () =>{
-// let newRequest = new XMLHttpRequest();
-// newRequest.addEventListener("load", clickFunction);
-// newRequest.addEventListener("error", WTF);
-// newRequest.open("GET", "solar.json");
-// newRequest.send();
-// };
-
-// clickApplication();
+// const closeIt = e => {
+//     startApplication(executeFunction);
+// }
