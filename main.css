@@ -76,8 +76,8 @@ textarea{
     width: 100%;
     height: 800px;
     text-align: center;
-    margin: 5%;
-    padding: 5%;
+    margin: 2%;
+    padding: 3%;
     background-color: snow;
     overflow: scroll;
 }
@@ -94,5 +94,6 @@ textarea{
     width: 30px;
     height: 30px;
     font-size: 1.4em;
-    background-color: lightslategray;
+    color: red;
+    /* background-color: lightslategray; */
 }
