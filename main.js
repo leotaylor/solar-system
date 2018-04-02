@@ -64,6 +64,7 @@ const addPlanetEventListener = () =>{
 
 const clickItOrTicket = e => {
     const newContainer = e.target.parentNode;
+        // I probably need something here. 
     console.log("newContainer: ", newContainer);
     startApplication(clickFunction);
 }
@@ -80,7 +81,6 @@ function clickFunction (){
 
 const addXeventListener = () =>{
     const XButton = document.getElementsByClassName("x-button");
-    console.log("xbutton:", XButton);
     for(let n=0; n<XButton.length; n++){
     XButton[n].addEventListener('click', closeIt);
     }
