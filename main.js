@@ -42,6 +42,7 @@ const buildBigDomString = (solarArray) => {
     console.log("solarArray:", solarArray);
     let domString = "";
     for(let j=0; j<solarArray.length; j++){
+        if(solarArray[j].name === selectedPlanet){
         domString += `<div class="bigCard">`;
         domString +=    `<button class="x-button">&#x2718</button>`
         domString +=    `<h1>${solarArray[j].name}</h1>`;
@@ -52,6 +53,7 @@ const buildBigDomString = (solarArray) => {
         domString +=    `<h4>"Largest Moon: "${solarArray[j].nameOfLargestMoon}</h4>`;
         domString += `</div>`;   
     }
+}
     printToDom(domString, "planet-holder");
 }
 
@@ -63,8 +65,9 @@ const addPlanetEventListener = () =>{
     }
 }
 
-const clickItOrTicket = e => {
-    const selectedPlanet = e.target.parentNode.children[0];
+const clickItOrTicket = (e) => {
+    selectedPlanet = e.target.parentNode.children[0].innerHTML;
+    // const selectedPlanet = e.target.parentNode.children[0];
     console.log("selectedPlanet: ", selectedPlanet);
     startApplication(clickFunction);
 }
@@ -81,7 +84,6 @@ function clickFunction (){
 
 const addXeventListener = () =>{
     const XButton = document.getElementsByClassName("x-button");
-    console.log("xbutton:", XButton);
     for(let n=0; n<XButton.length; n++){
     XButton[n].addEventListener('click', closeIt);
     }
