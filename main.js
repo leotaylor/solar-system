@@ -1,4 +1,6 @@
 //  ---------------------------------------------Print ON Load ----------------------------------
+let selectedPlanet ="";
+
 const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 };
@@ -36,7 +38,6 @@ startApplication(executeFunction);
 
 // ------------------------------Clicking on Planet -----------------------------------------
 
-
 const buildBigDomString = (solarArray) => {
     console.log("solarArray:", solarArray);
     let domString = "";
@@ -63,9 +64,8 @@ const addPlanetEventListener = () =>{
 }
 
 const clickItOrTicket = e => {
-    const newContainer = e.target.parentNode;
-        // I probably need something here. 
-    console.log("newContainer: ", newContainer);
+    const selectedPlanet = e.target.parentNode.children[0];
+    console.log("selectedPlanet: ", selectedPlanet);
     startApplication(clickFunction);
 }
 
@@ -81,6 +81,7 @@ function clickFunction (){
 
 const addXeventListener = () =>{
     const XButton = document.getElementsByClassName("x-button");
+    console.log("xbutton:", XButton);
     for(let n=0; n<XButton.length; n++){
     XButton[n].addEventListener('click', closeIt);
     }
