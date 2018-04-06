@@ -2,7 +2,6 @@ body{
     background-image: url("https://graffitiwallpaper.com/pics/listings/337_wide.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 200px;
 }
 
 #search{
@@ -23,15 +22,14 @@ textarea{
     justify-content: center;
     margin-left: 200px;
     margin-right: 200px;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 .planet{
     border-radius: 15%;
     box-shadow: 0px 30px 40px rgba(0,0,0,.1);
     background: linear-gradient(135deg, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 70%);
-    /* width: 200px; */
     min-width: 200px;
-    height: 225px;
+    height: 215px;
     text-align: center;
     margin: 1.5% 4%;
     padding: .2%;
@@ -40,7 +38,6 @@ textarea{
 }
 .planet h2{
     line-height: 175px;
-    /* z-index: 1; */
     position: absolute;
     width: 200px;
     height: 250px;
@@ -49,7 +46,7 @@ textarea{
 .planet img{
     position: absolute;
     width: 200px;
-    height: 225px;
+    height: 215px;
     border-radius: 15%;
     display: none;
 }
@@ -61,7 +58,6 @@ textarea{
 .planet:hover > img{
     display: block;
 }
-
 
 #bigCard-holder{
     display: flex;
@@ -80,22 +76,22 @@ textarea{
     margin: 2%;
     padding: 3%;
     background-color: snow;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .bigCard img{
     width: 200px;
     height: 225px;
-    object-fit: fill;
+    /* object-fit: fill; */
     border-radius: 15%;
 }
 
 .bigCard button{
-    margin-left: 90%;
+    margin-left: 83%;
     width: 60px;
     height: 60px;
-    font-size: 3.1em;
+    font-size: 3em;
     color: red;
-    /* background-color: lightslategray; */
+    background-color: snow;
     border: none;
 }
