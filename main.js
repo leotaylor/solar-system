@@ -1,5 +1,6 @@
 //  ---------------------------------------------Print ON Load ----------------------------------
 let selectedPlanet ="";
+//selectedPlanet is a global variable bc I was having trouble passing the event to the domString
 
 const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
@@ -39,10 +40,9 @@ startApplication(executeFunction);
 // ------------------------------Clicking on Planet -----------------------------------------
 
 const buildBigDomString = (solarArray) => {
-    console.log("solarArray:", solarArray);
     let domString = "";
     for(let j=0; j<solarArray.length; j++){
-        if(solarArray[j].name === selectedPlanet){
+        if(solarArray[j].name === selectedPlanet){  
         domString += `<div class="bigCard">`;
         domString +=    `<button class="x-button">&#x2718</button>`
         domString +=    `<h1>${solarArray[j].name}</h1>`;
@@ -59,7 +59,6 @@ const buildBigDomString = (solarArray) => {
 
 const addPlanetEventListener = () =>{
     const planetaryObject = document.getElementsByClassName("planet");
-    console.log("planetaryObject:", planetaryObject);
     for(let k=0; k<planetaryObject.length; k++){
         planetaryObject[k].addEventListener('click', clickItOrTicket);
     }
@@ -67,15 +66,11 @@ const addPlanetEventListener = () =>{
 
 const clickItOrTicket = (e) => {
     selectedPlanet = e.target.parentNode.children[0].innerHTML;
-    // const selectedPlanet = e.target.parentNode.children[0];
-    console.log("selectedPlanet: ", selectedPlanet);
     startApplication(clickFunction);
 }
 
 function clickFunction (){
     const data = JSON.parse(this.responseText);
-    console.log("data", data);  
-    // for loop, if statement, traverseDom
     buildBigDomString(data.planets);
     addXeventListener();
 }
