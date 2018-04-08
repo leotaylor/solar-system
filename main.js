@@ -25,6 +25,7 @@ function executeFunction (){
     const data = JSON.parse(this.responseText);
     buildDomString(data.planets);
     addPlanetEventListener();
+    addSearchEventListener();
 }
 
 const startApplication = (callback) => {
@@ -86,4 +87,25 @@ const addXeventListener = () =>{
 
 const closeIt = e => {
     startApplication(executeFunction);
+}
+
+//--------------------- SEARCH BAR ---------------------------
+
+const planetSearch = (e) => {
+    let searchBar = document.getElementById('searching');
+    let userInput = searchBar.value.toLowerCase();
+    let searchCard = document.getElementsByClassName('planet');
+    for(let i = 0; i < searchCard.length; i++){
+    let userInput = searchBar.value.toLowerCase();
+    if(searchCard[i].innerText.toLowerCase().indexOf(textInput) > - 1){
+            searchCard[i].style.display = "";
+        } else {
+            searchCard[i].style.display = "none";
+        }
+    }
+}
+
+const addSearchEventListener = () => {
+    let eventToSearch = document.getElementById('searching');
+    eventToSearch.addEventListener("keyup", planetSearch)
 }
